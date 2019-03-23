@@ -1,0 +1,10 @@
+{
+  "name": "example-puppeteer-jest",
+  "version": "1.0.0",
+  "description": "Running puppeteer with jest",
+  "main": "index.js",
+  "repository": "https://github.com/ddnb/example-puppeteer-jest.git",
+  "author": "admin@diendannhatban.info",
+  "license": "MIT",
+  "private": false
+}
