@@ -6,5 +6,13 @@
   "repository": "https://github.com/ddnb/example-puppeteer-jest.git",
   "author": "admin@diendannhatban.info",
   "license": "MIT",
-  "private": false
+  "private": false,
+  "scripts": {
+    "test": "jest"
+  },
+  "dependencies": {
+    "chart": "^0.1.2",
+    "jest": "^24.5.0",
+    "puppeteer": "^1.13.0"
+  }
 }
