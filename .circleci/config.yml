@@ -1,0 +1,36 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: node:8.11.3
+        environment:
+          SANDBOX: 0
+          SLOWMO: 1
+
+    working_directory: ~/code
+
+    steps:
+      - checkout
+
+      # Download and cache dependencies
+      - restore_cache:
+          keys:
+          - v1-dependencies-{{ checksum "package.json" }}
+          # fallback to using the latest cache if no exact match is found
+          - v1-dependencies-
+
+      # env
+      - run: pwd;ls;
+
+      - run:
+          name: Puppeteer dependencies
+          command: 'sh .circleci/setup_puppeteer.sh'
+
+      - run: yarn install
+
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "package.json" }}
+        
+      - run: yarn test
