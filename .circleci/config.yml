@@ -2,10 +2,8 @@ version: 2
 jobs:
   build:
     docker:
-      - image: node:8.11.3
+      - image: node:11.12.0
         environment:
-          SANDBOX: 0
-          SLOWMO: 1
 
     working_directory: ~/code
 
@@ -20,7 +18,7 @@ jobs:
           - v1-dependencies-
 
       # env
-      - run: pwd;ls;
+      - run: pwd;ls;whoami
 
       - run:
           name: Puppeteer dependencies
