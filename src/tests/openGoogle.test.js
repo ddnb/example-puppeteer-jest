@@ -2,7 +2,7 @@ const timeout = 10000
 testName = "open Google homepage"
 
 describe(
-  '/ (' + testname + ')',
+  '/ (' + testName + ')',
   () => {
     let page
     beforeAll(async () => {
