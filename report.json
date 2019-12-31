@@ -1,0 +1,72 @@
+[
+  {
+    "description": "  Anyone can open google web page",
+    "keyword": "Feature",
+    "name": "openGoogle",
+    "line": 2,
+    "id": "opengoogle",
+    "tags": [
+      {
+        "name": "@Google",
+        "line": 1
+      }
+    ],
+    "uri": "features/01-open-google.feature",
+    "elements": [
+      {
+        "id": "opengoogle;opengoogle",
+        "keyword": "Scenario",
+        "line": 5,
+        "name": "openGoogle",
+        "tags": [
+          {
+            "name": "@Google",
+            "line": 1
+          }
+        ],
+        "type": "scenario",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 6,
+            "name": "Someone want to open google",
+            "match": {
+              "location": "features/step_definitions/01-open-google.js:25"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 7,
+            "name": "Open and goto google web page",
+            "match": {
+              "location": "features/step_definitions/01-open-google.js:32"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 2888000000
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 8,
+            "name": "Verify that google should open",
+            "match": {
+              "location": "features/step_definitions/01-open-google.js:38"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 362000000
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

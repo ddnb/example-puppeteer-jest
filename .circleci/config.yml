@@ -2,7 +2,8 @@ version: 2
 jobs:
   build:
     docker:
-      - image: node:11.12.0
+      - image: lecaoquochung/puppeteer:dev
+        user: pptruser
         environment:
 
     working_directory: ~/code
@@ -13,22 +14,34 @@ jobs:
       # Download and cache dependencies
       - restore_cache:
           keys:
-          - v1-dependencies-{{ checksum "package.json" }}
+          - v1.0.1-dependencies-{{ checksum "package.json" }}
           # fallback to using the latest cache if no exact match is found
-          - v1-dependencies-
+          - v1.0.1-dependencies-
 
       # env
-      - run: pwd;ls;whoami
-
-      - run:
-          name: Puppeteer dependencies
-          command: 'sh .circleci/setup_puppeteer.sh'
+      - run: 
+          name: Before
+          command: |
+            pwd;ls;whoami
 
       - run: yarn install
 
       - save_cache:
           paths:
             - node_modules
-          key: v1-dependencies-{{ checksum "package.json" }}
+          key: v1.0.1-dependencies-{{ checksum "package.json" }}
         
-      - run: yarn test
+      - run: 
+          name: Jest test
+          command: 
+            yarn test
+      
+      - run:
+          name: Cucumber test
+          command:
+            yarn cucumber
+
+      - run:
+          name: Cucumber report
+          command:
+            yarn test:report
