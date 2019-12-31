@@ -1,6 +1,6 @@
 {
   "name": "example-puppeteer-jest",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Running puppeteer with jest",
   "main": "index.js",
   "repository": "https://github.com/ddnb/example-puppeteer-jest.git",

@@ -2,7 +2,8 @@ version: 2
 jobs:
   build:
     docker:
-      - image: node:11.12.0
+      - image: lecaoquochung/puppeteer:dev
+        user: pptruser
         environment:
 
     working_directory: ~/code
@@ -18,11 +19,10 @@ jobs:
           - v1-dependencies-
 
       # env
-      - run: pwd;ls;whoami
-
-      - run:
-          name: Puppeteer dependencies
-          command: 'sh .circleci/setup_puppeteer.sh'
+      - run: 
+          name: Before
+          command: |
+            pwd;ls;whoami
 
       - run: yarn install
 
