@@ -31,4 +31,17 @@ jobs:
             - node_modules
           key: v1.0.1-dependencies-{{ checksum "package.json" }}
         
-      - run: yarn test
+      - run: 
+          name: Jest test
+          command: 
+            yarn test
+      
+      - run:
+          name: Cucumber test
+          command:
+            yarn cucumber
+
+      - run:
+          name: Cucumber report
+          command:
+            yarn test:report
