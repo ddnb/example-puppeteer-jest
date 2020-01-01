@@ -45,3 +45,10 @@ jobs:
           name: Cucumber report
           command:
             yarn test:report
+
+      - run:
+          name: Upload report to S3 (https://example-puppeteer-jest.ddnb.info/branch/report.html)
+          command:
+            aws s3 cp report.html s3://example-puppeteer-jest/$CIRCLE_BRANCH/report.html --acl public-read
+
+      
