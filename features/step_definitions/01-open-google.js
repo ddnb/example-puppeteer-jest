@@ -1,6 +1,6 @@
 const { Given, When, Then, BeforeAll, AfterAll } = require('cucumber');
 var {setDefaultTimeout} = require('cucumber');
-setDefaultTimeout(600 * 1000);
+setDefaultTimeout(100 * 1000);
 
 // lib
 const puppeteer = require('puppeteer');
